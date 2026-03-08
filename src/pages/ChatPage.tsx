@@ -142,9 +142,9 @@ export default function ChatPage() {
                   : "bg-card border border-border rounded-bl-md"
               }`}
             >
-              <ReactMarkdown className="prose prose-sm dark:prose-invert max-w-none [&>p]:mb-1 [&>p:last-child]:mb-0">
-                {msg.content}
-              </ReactMarkdown>
+              <div className="prose prose-sm dark:prose-invert max-w-none [&>p]:mb-1 [&>p:last-child]:mb-0">
+                <ReactMarkdown>{msg.content}</ReactMarkdown>
+              </div>
             </div>
             {msg.role === "user" && (
               <div className="w-8 h-8 rounded-xl bg-foreground text-background flex items-center justify-center shrink-0">
