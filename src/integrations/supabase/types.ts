@@ -14,7 +14,150 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      appointments: {
+        Row: {
+          appointment_date: string
+          created_at: string
+          description: string | null
+          id: string
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          appointment_date: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          title: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          appointment_date?: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      chat_messages: {
+        Row: {
+          content: string
+          created_at: string
+          id: string
+          role: string
+          user_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          id?: string
+          role: string
+          user_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          role?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      journal_entries: {
+        Row: {
+          ai_mood_score: number | null
+          ai_response: string | null
+          ai_sentiment: string | null
+          content: string
+          created_at: string
+          id: string
+          mood_rating: number
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          ai_mood_score?: number | null
+          ai_response?: string | null
+          ai_sentiment?: string | null
+          content: string
+          created_at?: string
+          id?: string
+          mood_rating: number
+          title: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          ai_mood_score?: number | null
+          ai_response?: string | null
+          ai_sentiment?: string | null
+          content?: string
+          created_at?: string
+          id?: string
+          mood_rating?: number
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          address: string | null
+          age: number | null
+          avatar_url: string | null
+          created_at: string
+          display_name: string | null
+          email: string | null
+          id: string
+          is_onboarded: boolean
+          notification_journals: boolean
+          notification_reminders: boolean
+          notification_tips: boolean
+          phone: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          address?: string | null
+          age?: number | null
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          email?: string | null
+          id?: string
+          is_onboarded?: boolean
+          notification_journals?: boolean
+          notification_reminders?: boolean
+          notification_tips?: boolean
+          phone?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          address?: string | null
+          age?: number | null
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          email?: string | null
+          id?: string
+          is_onboarded?: boolean
+          notification_journals?: boolean
+          notification_reminders?: boolean
+          notification_tips?: boolean
+          phone?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
