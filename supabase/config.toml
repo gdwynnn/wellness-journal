@@ -1,0 +1,7 @@
+project_id = "egytoywphahybvannidm"
+
+[functions.chat]
+verify_jwt = false
+
+[functions.analyze-journal]
+verify_jwt = false
