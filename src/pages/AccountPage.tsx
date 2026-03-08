@@ -136,6 +136,29 @@ export default function AccountPage() {
         ))}
       </div>
 
+      {/* Appearance */}
+      <div className="glass rounded-2xl p-5 shadow-soft space-y-4">
+        <div className="flex items-center gap-3 mb-2">
+          <Moon className="w-4 h-4 text-muted-foreground" />
+          <h2 className="font-display text-sm font-semibold text-foreground">Appearance</h2>
+        </div>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            {document.documentElement.classList.contains("dark") ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+            <Label className="text-sm">Dark Mode</Label>
+          </div>
+          <Switch
+            checked={document.documentElement.classList.contains("dark")}
+            onCheckedChange={(checked) => {
+              document.documentElement.classList.toggle("dark", checked);
+              localStorage.setItem("theme", checked ? "dark" : "light");
+              // Force re-render
+              setNewPassword((p) => p);
+            }}
+          />
+        </div>
+      </div>
+
       {/* Security */}
       <div className="glass rounded-2xl p-5 shadow-soft space-y-4">
         <div className="flex items-center gap-3 mb-2">
